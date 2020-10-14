@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+class Stack<E> {
+	E[] data;
+	int top;
+	Stack() {
+		data=(E[])new Object[1024];
+		top=-1;
+	}
+	public void push(E v) {
+		top++;
+		data[top]=v;
+	}
+	public void pop() {
+		data[top]=null;
+		top--;
+	}
+	public E top() {
+		return data[top];
+	}
+	public boolean empty() {
+		return top==-1;
+	}
+	public int size() {
+		return top+1;
+	}
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		
+		Stack<Integer> stack=new Stack<Integer>();
+		String result="";
+		int snum=1;
+		for(int i=0; i<num; i++) {
+			int nums=sc.nextInt();
+			while(snum<=nums) {
+				stack.push(snum);
+			}
+		}
+		sc.close();
+	}
+
+}
